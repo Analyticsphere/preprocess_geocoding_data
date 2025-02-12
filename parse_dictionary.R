@@ -270,8 +270,8 @@ df_school_mapping <- df_school_grp1 %>%
 # -------------------------------
 combined_mapping <- bind_rows(
   df_home_mapping,
-  df_seas_mapping_clean,
-  df_child_mapping_clean,
+  df_seas_mapping,
+  df_child_mapping,
   df_work_mapping,
   df_prevwork_mapping,
   df_school_mapping
@@ -284,5 +284,6 @@ combined_mapping <- combined_mapping %>%
          follow_up_2_src_cid, cross_st_1_cid, cross_st_2_cid,
          address_type)
 
-write_xlsx(combined_mapping, "combined_mapping.xlsx")
-cat("Combined mapping saved to combined_mapping.xlsx\n")
+write_xlsx(combined_mapping, "address_concept_map.xlsx")
+cat("Combined mapping saved to address_concept_map.xlsx\n")
+
