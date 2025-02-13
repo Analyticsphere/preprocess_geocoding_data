@@ -2,6 +2,13 @@
 
 This project contains two scripts designed to help prepare self‐reported addresses from our **Module 4: Where You Live and Work** questionnaire for geocoding by NORC. Our goal is to transform the raw survey data and the accompanying data dictionary into a flattened, long-format mapping file that is easy for NORC to work with—without requiring detailed institutional knowledge of our data structure. Each address record in our survey may include follow-up questions (for participants who do not remember all details), and our scripts capture all relevant fields for geocoding.
 
+```mermaid
+flowchart LR
+    DD[dictionary.xlsx] -->|parse_dictionary| MAP[address_concept_map.xlsx]
+    MAP --> |generate_norc_addresses.R| SQL[address_query.sql]
+    SQL --> |BigQuery| NORC[addresses_for_norc_geocoding.xlsx]
+```
+
 ## Overview
 
 There are two main scripts:
