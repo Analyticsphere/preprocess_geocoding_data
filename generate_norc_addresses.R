@@ -10,7 +10,10 @@ table   <- 'module4_v1_JP'
 mapping_file <- 'address_concept_map.xlsx'
 
 # Read the mapping file (first sheet) and convert all columns to character
-df <- read_excel(mapping_file, sheet = 1) %>% mutate(across(everything(), as.character))
+df <- read_excel(mapping_file, sheet = 1) %>% 
+  mutate(across(everything(), as.character))
+print("Columns:")
+print(names(df))
 
 # Function to generate the SQL SELECT expression for a given row.
 generate_address_select_expression <- function(row) {
@@ -29,8 +32,8 @@ generate_address_select_expression <- function(row) {
     glue("D_{row[['follow_up_2_src_cid']]}_D_{row[['cross_st_2_cid']]} AS cross_street_2")
   )
   # Indent each line with 4 spaces
-  indenteD_lines <- paste0("    ", lines, collapse = "\n")
-  return(indenteD_lines)
+  indented_lines <- paste0("    ", lines, collapse = "\n")
+  return(indented_lines)
 }
 
 # Build a list of complete SELECT statements for each row
@@ -39,14 +42,36 @@ select_statements <- apply(df, 1, function(r) {
   glue("SELECT\n{sql_expr}\nFROM `{project}.{dataset}.{table}`")
 })
 
-# Combine all SELECT statements with UNION ALL, and add an ORDER BY clause at the end.
-final_query <- paste(select_statements, collapse = "\n\nUNION ALL\n\n")
-final_query <- paste(final_query, "ORDER BY Connect_ID, address_nickname", sep = "\n\n")
+# Combine all SELECT statements with UNION ALL
+union_query <- paste(select_statements, collapse = "\n\nUNION ALL\n\n")
 
-# Print the final query
-cat("Generated Query:\n")
+# Helper function to indent text by a given indent string (default is 4 spaces)
+indent_text <- function(text, indent = "    ") {
+  # Split text by newline into individual lines
+  lines <- unlist(strsplit(text, "\n"))
+  # Prepend each line with the indent
+  indented_lines <- paste0(indent, lines)
+  # Reassemble into one string with newlines
+  paste(indented_lines, collapse = "\n")
+}
+
+# Indent the union query using your helper function
+indented_union_query <- indent_text(union_query)
+
+# Use glue to build the final query with preserved indentation
+final_query <- glue("
+SELECT *
+FROM (
+
+{indented_union_query}
+
+) t
+WHERE COALESCE(street_num, street_name, apartment_number, city, state, zip_code, country, cross_street_1, cross_street_2) IS NOT NULL
+ORDER BY Connect_ID, address_nickname
+", .trim = FALSE)
+
+# Display the final query in the console
 cat(final_query, "\n")
 
 # Save the final query to a file
 writeLines(final_query, "address_query.sql")
-cat("Query saved to address_query.sql\n")
