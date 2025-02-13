@@ -4,7 +4,7 @@ This project contains two scripts designed to help prepare self‐reported addre
 
 ```mermaid
 flowchart LR
-    DD[dictionary.xlsx] -->|parse_dictionary| MAP[address_concept_map.xlsx]
+    DD[dictionary.xlsx] -->|parse_dictionary.R| MAP[address_concept_map.xlsx]
     MAP --> |generate_norc_addresses.R| SQL[address_query.sql]
     SQL --> |BigQuery| NORC[addresses_for_norc_geocoding.xlsx]
 ```
