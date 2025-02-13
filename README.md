@@ -26,17 +26,6 @@ There are two main scripts:
 -   **R (version ≥ 4.x)** installed on your system.
 
 -   The following R packages must be installed:
-
-    -   `readxl`
-    -   `dplyr`
-    -   `tidyr`
-    -   `stringr`
-    -   `writexl`
-    -   `janitor`
-    -   `glue`
-
-    You can install them using:
-
     ```         
     install.packages(c("readxl", "dplyr", "tidyr", "stringr", "writexl", "janitor", "glue"))
     ```
@@ -59,15 +48,6 @@ There are two main scripts:
     -   Follow-up fields and cross street fields\
     -   `address_type` (e.g., Home, Seasonal, Childhood, Current Work, Previous Work, School)
 
--   **How to Run:**\
-    Open the script in RStudio or run it from the R command line:
-
-    ```         
-    source("parse_dictionary.R")
-    ```
-
-    This will read `dictionary.xlsx`, process the data, and produce `address_concept_map.xlsx`.
-
 ### 2. SQL Query Generation Script (R)
 
 -   **Purpose:**\
@@ -75,12 +55,3 @@ There are two main scripts:
 
 -   **Output:**\
     Produces a SQL file `address_query.sql` containing the full query.
-
--   **How to Run:**\
-    Open the script in RStudio or run it from the R command line:
-
-    ```         
-    source("generate_norc_addresses.R")
-    ```
-
-    This script reads `address_concept_map.xlsx`, generates the query, prints it to the console, and writes it to `address_query.sql`.
