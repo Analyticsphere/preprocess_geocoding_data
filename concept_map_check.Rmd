@@ -1,0 +1,57 @@
+---
+title: "concept_map_check"
+output: html_document
+date: "2025-02-14"
+---
+
+```{r}
+library(readxl)
+library(tidyverse)
+library(dplyr)
+```
+
+```{r warning = FALSE}
+concept_map = read_excel('/Users/orszagl2/Documents/AdHoc/preprocess_geocoding_data/address_concept_map.xlsx')
+dict = read_excel('/Users/orszagl2/Documents/AdHoc/preprocess_geocoding_data/dictionary.xlsx', sheet = 3)
+```
+
+```{r}
+dict = dict[c(5970:7738), c(5:8, 14:15, 18:19)]
+dict = na.omit(dict)
+dict <- dict %>%
+  filter(!if_any(everything(), ~ grepl("DontKnow", ., ignore.case = TRUE)))
+```
+
+```{r}
+dict = dict[-c(144:209, 340:421, 435:513, 527:563, 577:611, 625:660), ]
+```
+
+```{r}
+colnames(dict)[colnames(dict)=="conceptId...5"]= "srv_cid"
+colnames(dict)[colnames(dict)=="conceptId...7"]= "ques_cid"
+colnames(dict)[colnames(dict)=="conceptId...14"]= "spec_cid"
+colnames(dict)[colnames(dict)=="Variable Name"]= "var_name"
+```
+
+```{r}
+df_long <- concept_map %>%
+  pivot_longer(cols = -c(address_src_quest_cid, address_nickname, follow_up_1_src_cid, follow_up_2_src_cid, address_type), values_to = "value") 
+```
+
+```{r}
+df_check = data.frame(dict_cid = dict$spec_cid, 
+                      jake_cid = df_long$value,
+                      dict_cid_q = dict$ques_cid,
+                      jake_cid_q1 = df_long$address_src_quest_cid,
+                      jake_cid_q2 = df_long$follow_up_1_src_cid,
+                      jake_cid_q3 = df_long$follow_up_2_src_cid)
+df_check = df_check%>%
+  mutate(jake_q = case_when(
+    (row_number() - 1) %% 13 < 7 ~ jake_cid_q1,  # First 7 rows of each cycle from col1
+    (row_number() - 1) %% 13 < 11 ~ jake_cid_q2, # Next 4 rows from col2
+    TRUE ~ jake_cid_q3  # Last 2 rows from col3
+  ))
+df_check$checked_spec = ifelse(df_check$dict_cid == df_check$jake_cid, TRUE, FALSE)
+df_check$checked_q = ifelse(df_check$dict_cid_q == df_check$jake_q, 
+                            TRUE, FALSE)
+```
