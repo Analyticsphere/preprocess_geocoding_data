@@ -425,6 +425,33 @@ FROM (
         D_443679537_D_952170182 AS cross_street_2
     FROM `nih-nci-dceg-connect-prod-6d04.FlatConnect.module4_v1_JP`
 
+UNION ALL
+
+    SELECT
+        Connect_ID,
+        '332759827' AS address_src_question_cid,
+        'user_profile_physical_address' AS address_nickname,
+        CONCAT(d_207908218, ' ', d_224392018) AS street_num, -- concatenate address line 1 and address line 2
+        NULL AS street_name, -- there is no street_name for the user profile address since it is given in the string_num field
+        NULL AS apartment_number, -- there is no appartment_number for the user profile address since it is given in the string_num field
+        d_451993790 AS city,
+        d_187799450 AS state,
+        d_449168732 AS zip_code,
+        NULL AS country, -- there is no country field provided in the user profile
+        NULL AS cross_street_1,
+        NULL AS cross_street_2
+    FROM `nih-nci-dceg-connect-prod-6d04.FlatConnect.participants_JP`
+    WHERE
+        Connect_ID IS NOT NULL
+        -- Ensure that at least one of these fields has non-empty values
+        AND (
+            (d_207908218 IS NOT NULL AND d_207908218 != '') OR
+            (d_224392018 IS NOT NULL AND d_224392018 != '') OR
+            (d_451993790 IS NOT NULL AND d_451993790 != '') OR
+            (d_187799450 IS NOT NULL AND d_187799450 != '') OR
+            (d_449168732 IS NOT NULL AND d_449168732 != '')
+    )
+
 ) t
 WHERE COALESCE(street_num, street_name, apartment_number, city, state, zip_code, country, cross_street_1, cross_street_2) IS NOT NULL
 ORDER BY Connect_ID, address_nickname
