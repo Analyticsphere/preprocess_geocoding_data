@@ -4,11 +4,14 @@ FROM (
 
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '121490150' AS address_src_question_cid,
         'home_address_01' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_121490150_D_255248624 AS street_num,
         D_121490150_D_945532934 AS street_name,
-        D_121490150_D_469838242 AS apartment_number,
+        D_121490150_D_469838242 AS apartment_num,
         COALESCE(D_121490150_D_303500597, D_920576363_D_725583683) AS city,
         COALESCE(D_121490150_D_195068098, D_920576363_D_917021073) AS state,
         COALESCE(D_121490150_D_202784871, D_920576363_D_970000442) AS zip_code,
@@ -21,11 +24,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '574985342' AS address_src_question_cid,
         'home_address_02' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_574985342_D_985267931 AS street_num,
         D_574985342_D_111275683 AS street_name,
-        D_574985342_D_129226572 AS apartment_number,
+        D_574985342_D_129226572 AS apartment_num,
         COALESCE(D_574985342_D_536516743, D_444145120_D_288498031) AS city,
         COALESCE(D_574985342_D_283900560, D_444145120_D_195845897) AS state,
         COALESCE(D_574985342_D_467947502, D_444145120_D_936129960) AS zip_code,
@@ -38,11 +44,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '828086036' AS address_src_question_cid,
         'home_address_03' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_828086036_D_875706715 AS street_num,
         D_828086036_D_645150792 AS street_name,
-        D_828086036_D_585360350 AS apartment_number,
+        D_828086036_D_585360350 AS apartment_num,
         COALESCE(D_828086036_D_588699608, D_752101258_D_648495207) AS city,
         COALESCE(D_828086036_D_544692849, D_752101258_D_300933270) AS state,
         COALESCE(D_828086036_D_335435992, D_752101258_D_649864362) AS zip_code,
@@ -55,11 +64,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '680046149' AS address_src_question_cid,
         'home_address_04' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_680046149_D_130174162 AS street_num,
         D_680046149_D_563832508 AS street_name,
-        D_680046149_D_817839081 AS apartment_number,
+        D_680046149_D_817839081 AS apartment_num,
         COALESCE(D_680046149_D_930511603, D_879180101_D_931999203) AS city,
         COALESCE(D_680046149_D_756548442, D_879180101_D_486511102) AS state,
         COALESCE(D_680046149_D_455968200, D_879180101_D_267027102) AS zip_code,
@@ -72,11 +84,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '274189667' AS address_src_question_cid,
         'home_address_05' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_274189667_D_838725845 AS street_num,
         D_274189667_D_565515774 AS street_name,
-        D_274189667_D_848348504 AS apartment_number,
+        D_274189667_D_848348504 AS apartment_num,
         COALESCE(D_274189667_D_742177990, D_212343294_D_445867902) AS city,
         COALESCE(D_274189667_D_843508307, D_212343294_D_348049244) AS state,
         COALESCE(D_274189667_D_554901696, D_212343294_D_684217044) AS zip_code,
@@ -89,11 +104,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '113930886' AS address_src_question_cid,
         'home_address_06' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_113930886_D_306805272 AS street_num,
         D_113930886_D_819844467 AS street_name,
-        D_113930886_D_164233037 AS apartment_number,
+        D_113930886_D_164233037 AS apartment_num,
         COALESCE(D_113930886_D_418702418, D_255474241_D_218334768) AS city,
         COALESCE(D_113930886_D_101219440, D_255474241_D_394294282) AS state,
         COALESCE(D_113930886_D_127963610, D_255474241_D_803526907) AS zip_code,
@@ -106,11 +124,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '809728747' AS address_src_question_cid,
         'home_address_07' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_809728747_D_351559015 AS street_num,
         D_809728747_D_903490632 AS street_name,
-        D_809728747_D_906119853 AS apartment_number,
+        D_809728747_D_906119853 AS apartment_num,
         COALESCE(D_809728747_D_703944664, D_201906316_D_476697171) AS city,
         COALESCE(D_809728747_D_390463636, D_201906316_D_605344820) AS state,
         COALESCE(D_809728747_D_256790385, D_201906316_D_814644814) AS zip_code,
@@ -123,11 +144,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '539057792' AS address_src_question_cid,
         'home_address_08' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_539057792_D_893639464 AS street_num,
         D_539057792_D_438475588 AS street_name,
-        D_539057792_D_194165243 AS apartment_number,
+        D_539057792_D_194165243 AS apartment_num,
         COALESCE(D_539057792_D_744290061, D_864213677_D_280877371) AS city,
         COALESCE(D_539057792_D_516936572, D_864213677_D_463064782) AS state,
         COALESCE(D_539057792_D_673034401, D_864213677_D_865310914) AS zip_code,
@@ -140,11 +164,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '537011756' AS address_src_question_cid,
         'home_address_09' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_537011756_D_988266183 AS street_num,
         D_537011756_D_709374950 AS street_name,
-        D_537011756_D_853931010 AS apartment_number,
+        D_537011756_D_853931010 AS apartment_num,
         COALESCE(D_537011756_D_351559021, D_964853797_D_548773158) AS city,
         COALESCE(D_537011756_D_290370013, D_964853797_D_487043303) AS state,
         COALESCE(D_537011756_D_453691095, D_964853797_D_659122266) AS zip_code,
@@ -157,11 +184,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '171937884' AS address_src_question_cid,
         'home_address_10' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_171937884_D_264707783 AS street_num,
         D_171937884_D_666011940 AS street_name,
-        D_171937884_D_981594981 AS apartment_number,
+        D_171937884_D_981594981 AS apartment_num,
         COALESCE(D_171937884_D_282089547, D_787064287_D_891573875) AS city,
         COALESCE(D_171937884_D_612617245, D_787064287_D_862255177) AS state,
         COALESCE(D_171937884_D_674024553, D_787064287_D_972332937) AS zip_code,
@@ -174,11 +204,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '828766803' AS address_src_question_cid,
         'home_address_11' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_828766803_D_622968789 AS street_num,
         D_828766803_D_696874548 AS street_name,
-        D_828766803_D_450630128 AS apartment_number,
+        D_828766803_D_450630128 AS apartment_num,
         COALESCE(D_828766803_D_309461541, D_878688378_D_706592013) AS city,
         COALESCE(D_828766803_D_789637860, D_878688378_D_585473282) AS state,
         COALESCE(D_828766803_D_795253129, D_878688378_D_814137809) AS zip_code,
@@ -191,11 +224,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '376408004' AS address_src_question_cid,
         'seasonal_address_01' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_376408004_D_234037089 AS street_num,
         D_376408004_D_416862112 AS street_name,
-        D_376408004_D_671149035 AS apartment_number,
+        D_376408004_D_671149035 AS apartment_num,
         COALESCE(D_376408004_D_556576930, D_173413183_D_416620941) AS city,
         COALESCE(D_376408004_D_304326324, D_173413183_D_915859406) AS state,
         COALESCE(D_376408004_D_812433386, D_173413183_D_354833686) AS zip_code,
@@ -208,11 +244,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '279093430' AS address_src_question_cid,
         'seasonal_address_02' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_279093430_D_476938134 AS street_num,
         D_279093430_D_561635035 AS street_name,
-        D_279093430_D_134210521 AS apartment_number,
+        D_279093430_D_134210521 AS apartment_num,
         COALESCE(D_279093430_D_715370929, D_657986901_D_726739712) AS city,
         COALESCE(D_279093430_D_109991481, D_657986901_D_149514187) AS state,
         COALESCE(D_279093430_D_494380686, D_657986901_D_845446624) AS zip_code,
@@ -225,11 +264,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '143927994' AS address_src_question_cid,
         'seasonal_address_03' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_143927994_D_119483547 AS street_num,
         D_143927994_D_194338739 AS street_name,
-        D_143927994_D_387077376 AS apartment_number,
+        D_143927994_D_387077376 AS apartment_num,
         COALESCE(D_143927994_D_113352592, D_564684946_D_148846635) AS city,
         COALESCE(D_143927994_D_768114466, D_564684946_D_192663941) AS state,
         COALESCE(D_143927994_D_938180781, D_564684946_D_245044197) AS zip_code,
@@ -242,11 +284,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '935378391' AS address_src_question_cid,
         'seasonal_address_04' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_935378391_D_785588454 AS street_num,
         D_935378391_D_419659205 AS street_name,
-        D_935378391_D_653181757 AS apartment_number,
+        D_935378391_D_653181757 AS apartment_num,
         COALESCE(D_935378391_D_733619119, D_558981691_D_571926996) AS city,
         COALESCE(D_935378391_D_843680322, D_558981691_D_645589113) AS state,
         COALESCE(D_935378391_D_716343828, D_558981691_D_701056236) AS zip_code,
@@ -259,11 +304,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '320166033' AS address_src_question_cid,
         'seasonal_address_05' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_320166033_D_275244758 AS street_num,
         D_320166033_D_688216428 AS street_name,
-        D_320166033_D_843674851 AS apartment_number,
+        D_320166033_D_843674851 AS apartment_num,
         COALESCE(D_320166033_D_570311888, D_194944818_D_101804763) AS city,
         COALESCE(D_320166033_D_557852952, D_194944818_D_502068619) AS state,
         COALESCE(D_320166033_D_970217879, D_194944818_D_787391994) AS zip_code,
@@ -276,11 +324,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '383535171' AS address_src_question_cid,
         'seasonal_address_06' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_383535171_D_666445636 AS street_num,
         D_383535171_D_398622449 AS street_name,
-        D_383535171_D_521925072 AS apartment_number,
+        D_383535171_D_521925072 AS apartment_num,
         COALESCE(D_383535171_D_888514303, D_508587741_D_686611963) AS city,
         COALESCE(D_383535171_D_905002640, D_508587741_D_900950849) AS state,
         COALESCE(D_383535171_D_687407917, D_508587741_D_103689435) AS zip_code,
@@ -293,11 +344,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '133566757' AS address_src_question_cid,
         'seasonal_address_07' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_133566757_D_199489170 AS street_num,
         D_133566757_D_605155921 AS street_name,
-        D_133566757_D_300476868 AS apartment_number,
+        D_133566757_D_300476868 AS apartment_num,
         COALESCE(D_133566757_D_384403974, D_293954660_D_860984191) AS city,
         COALESCE(D_133566757_D_585153023, D_293954660_D_892150843) AS state,
         COALESCE(D_133566757_D_248996395, D_293954660_D_230376384) AS zip_code,
@@ -310,11 +364,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '509553290' AS address_src_question_cid,
         'seasonal_address_08' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_509553290_D_295693777 AS street_num,
         D_509553290_D_646099557 AS street_name,
-        D_509553290_D_886284650 AS apartment_number,
+        D_509553290_D_886284650 AS apartment_num,
         COALESCE(D_509553290_D_367684056, D_268612977_D_599753334) AS city,
         COALESCE(D_509553290_D_389478638, D_268612977_D_467126157) AS state,
         COALESCE(D_509553290_D_949478044, D_268612977_D_421779583) AS zip_code,
@@ -327,11 +384,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '239279719' AS address_src_question_cid,
         'seasonal_address_09' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_239279719_D_143093472 AS street_num,
         D_239279719_D_746619983 AS street_name,
-        D_239279719_D_911964974 AS apartment_number,
+        D_239279719_D_911964974 AS apartment_num,
         COALESCE(D_239279719_D_711881258, D_216096388_D_450433102) AS city,
         COALESCE(D_239279719_D_390941579, D_216096388_D_181005197) AS state,
         COALESCE(D_239279719_D_737885885, D_216096388_D_855530921) AS zip_code,
@@ -344,11 +404,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '778711683' AS address_src_question_cid,
         'seasonal_address_10' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_778711683_D_117703279 AS street_num,
         D_778711683_D_734790700 AS street_name,
-        D_778711683_D_278164536 AS apartment_number,
+        D_778711683_D_278164536 AS apartment_num,
         COALESCE(D_778711683_D_160188014, D_757983656_D_983038259) AS city,
         COALESCE(D_778711683_D_596751155, D_757983656_D_313586037) AS state,
         COALESCE(D_778711683_D_624226136, D_757983656_D_158186064) AS zip_code,
@@ -361,11 +424,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '632533534' AS address_src_question_cid,
         'childhood_address_01' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_632533534_D_284547539 AS street_num,
         D_632533534_D_802585033 AS street_name,
-        D_632533534_D_746533238 AS apartment_number,
+        D_632533534_D_746533238 AS apartment_num,
         COALESCE(D_632533534_D_128827522, D_264797252_D_890792569) AS city,
         COALESCE(D_632533534_D_439447560, D_264797252_D_451394598) AS state,
         COALESCE(D_632533534_D_286781627, D_264797252_D_984908796) AS zip_code,
@@ -378,11 +444,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '596318751' AS address_src_question_cid,
         'current_work_address_01' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_596318751_D_493984171 AS street_num,
         D_596318751_D_253017624 AS street_name,
-        D_596318751_D_404141282 AS apartment_number,
+        D_596318751_D_404141282 AS apartment_num,
         COALESCE(D_596318751_D_959804472, D_263588196_D_583500714) AS city,
         COALESCE(D_596318751_D_774707280, D_263588196_D_742105146) AS state,
         COALESCE(D_596318751_D_182144476, D_263588196_D_101341673) AS zip_code,
@@ -395,11 +464,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '992180692' AS address_src_question_cid,
         'previous_work_address_01' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_992180692_D_903896611 AS street_num,
         D_992180692_D_855583262 AS street_name,
-        D_992180692_D_371588177 AS apartment_number,
+        D_992180692_D_371588177 AS apartment_num,
         COALESCE(D_992180692_D_962868433, D_350394531_D_652022112) AS city,
         COALESCE(D_992180692_D_108530997, D_350394531_D_730666903) AS state,
         COALESCE(D_992180692_D_110852652, D_350394531_D_168091937) AS zip_code,
@@ -412,11 +484,14 @@ FROM (
     
     SELECT
         Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
         '914696832' AS address_src_question_cid,
         'school_address_01' AS address_nickname,
+        NULL AS address_line_1,
+        NULL AS address_line_2,
         D_914696832_D_970996351 AS street_num,
         D_914696832_D_249657148 AS street_name,
-        D_914696832_D_190883115 AS apartment_number,
+        D_914696832_D_190883115 AS apartment_num,
         COALESCE(D_914696832_D_161170041, D_668887646_D_225725599) AS city,
         COALESCE(D_914696832_D_660217075, D_668887646_D_977086216) AS state,
         COALESCE(D_914696832_D_884494489, D_668887646_D_997041632) AS zip_code,
@@ -425,15 +500,19 @@ FROM (
         D_443679537_D_952170182 AS cross_street_2
     FROM `nih-nci-dceg-connect-prod-6d04.FlatConnect.module4_v1_JP`
 
-UNION ALL
+  UNION ALL
 
+    -- Get User Profile Physical Address
     SELECT
         Connect_ID,
-        '332759827' AS address_src_question_cid,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
+        '207908218' AS address_src_question_cid,
         'user_profile_physical_address' AS address_nickname,
-        CONCAT(d_207908218, ' ', d_224392018) AS street_num, -- concatenate address line 1 and address line 2
-        NULL AS street_name, -- there is no street_name for the user profile address since it is given in the string_num field
-        NULL AS apartment_number, -- there is no appartment_number for the user profile address since it is given in the string_num field
+        d_207908218 AS address_line_1,
+        d_224392018 AS address_line_2,
+        NULL AS street_num,       -- there is no street_num for the user profile address since it is given in the address_line_1[2] fields
+        NULL AS street_name,      -- there is no street_name for the user profile address since it is given in the address_line_1[2] fields
+        NULL AS apartment_num, -- there is no appartment_num for the user profile address since it is given in the address_line_1[2] fields
         d_451993790 AS city,
         d_187799450 AS state,
         d_449168732 AS zip_code,
@@ -443,16 +522,45 @@ UNION ALL
     FROM `nih-nci-dceg-connect-prod-6d04.FlatConnect.participants_JP`
     WHERE
         Connect_ID IS NOT NULL
-        -- Ensure that at least one of these fields has non-empty values
         AND (
             (d_207908218 IS NOT NULL AND d_207908218 != '') OR
             (d_224392018 IS NOT NULL AND d_224392018 != '') OR
             (d_451993790 IS NOT NULL AND d_451993790 != '') OR
             (d_187799450 IS NOT NULL AND d_187799450 != '') OR
             (d_449168732 IS NOT NULL AND d_449168732 != '')
-    )
+        )
+    
+    UNION ALL
+    
+    -- Get User Profile Mailing Address if Physical Address is Missing
+    SELECT
+        Connect_ID,
+        CURRENT_TIMESTAMP() AS address_delivered_ts,
+        '521824358' AS address_src_question_cid,
+        'user_profile_mailing_address' AS address_nickname,
+        d_521824358 AS address_line_1,
+        d_442166669 AS address_line_2,
+        NULL AS street_num,       -- there is no street_num for the user profile address since it is given in the address_line_1[2] fields
+        NULL AS street_name,      -- there is no street_name for the user profile address since it is given in the address_line_1[2] fields
+        NULL AS apartment_num, -- there is no appartment_num for the user profile address since it is given in the address_line_1[2] fields
+        d_703385619 AS city,
+        d_634434746 AS state,
+        d_892050548 AS zip_code,
+        NULL AS country, -- there is no country field provided in the user profile
+        NULL AS cross_street_1,
+        NULL AS cross_street_2
+    FROM `nih-nci-dceg-connect-prod-6d04.FlatConnect.participants_JP`
+    WHERE
+        Connect_ID IS NOT NULL
+        AND (
+            (d_207908218 IS NULL OR d_207908218 = '') AND
+            (d_224392018 IS NULL OR d_224392018 = '') AND
+            (d_451993790 IS NULL OR d_451993790 = '') AND
+            (d_187799450 IS NULL OR d_187799450 = '') AND
+            (d_449168732 IS NULL OR d_449168732 = '')
+        )
 
 ) t
-WHERE COALESCE(street_num, street_name, apartment_number, city, state, zip_code, country, cross_street_1, cross_street_2) IS NOT NULL
+WHERE COALESCE(street_num, street_name, apartment_num, city, state, zip_code, country, cross_street_1, cross_street_2, address_line_1, address_line_2) IS NOT NULL
 ORDER BY Connect_ID, address_nickname
 
